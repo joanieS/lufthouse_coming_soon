@@ -18,6 +18,7 @@ COMMING SOON PAGE
     var seconds = $('#seconds');
     
     setDate();
+
     function setDate(){
         var now = new Date();
         if( launch < now ){
@@ -26,6 +27,7 @@ COMMING SOON PAGE
             minutes.html('<h1>0</h1><p>Minute</p>');
             seconds.html('<h1>0</h1><p>Second</p>');
             message.html('OUR SITE IS NOT READY YET...');
+            console.log(now);
         }
         else{
             var s = -now.getTimezoneOffset()*60 + (launch.getTime() - now.getTime())/1000;
@@ -89,7 +91,7 @@ ANIMATIONS
 /******************************************************************************************************************************
 SLIDER
 *******************************************************************************************************************************/
-(function($) {
+$(document).ready(function($) {
     "use strict";
     $("body.nomobile #slider").revolution(
     {
